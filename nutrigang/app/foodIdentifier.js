@@ -182,7 +182,7 @@ const FoodIdentifier = () => {
         carbs: `${carbs} g (${percentageCarbs}%)`,
         sugar: `${sugar} g (${percentageSugar}%)`,
         fat: `${fat} g (${percentageFat}%)`,
-        allergens: cautions.concat(customAllergens).length > 0 ? cautions.concat(customAllergens) : ['None'],
+        allergens: cautions.concat(customAllergens).length > 0 ? cautions.concat(customAllergens) : ['NONE'],
         category: foodDetails.category || 'N/A',
         brand: foodDetails.brand || 'Generic',
         quantity: quantity, // Add quantity to the state
@@ -206,7 +206,6 @@ const FoodIdentifier = () => {
       {image && (
         <>
           <Image source={{ uri: image }} style={{ width: 200, height: 200, marginTop: 20 }} />
-          <Button title="Upload a New Image" onPress={reset} />
         </>
       )}
 
@@ -219,12 +218,9 @@ const FoodIdentifier = () => {
           <Text>Sugar: {foodInfo.sugar}</Text>
           <Text>Fat: {foodInfo.fat}</Text>
           <Text>Allergens: {foodInfo.allergens.join(', ')}</Text>
-          <Text>Category: {foodInfo.category}</Text>
-          <Text>Brand: {foodInfo.brand}</Text>
-          <Text>Quantity: {foodInfo.quantity}</Text>
 
           {/* Button to go back to the upload screen */}
-          <Button title="Back to Upload Screen" onPress={reset} />
+          <Button title="Back to Main Screen" onPress={reset} />
         </View>
       )}
     </View>
