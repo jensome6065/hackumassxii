@@ -193,19 +193,38 @@ const FoodIdentifier = () => {
     }
   };
 
+  // Reset the image and food information to allow a new image to be uploaded
+  const reset = () => {
+    setImage(null);
+    setFoodInfo(null);
+  };
+
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Button title="Upload Image from Camera Roll" onPress={pickImage} />
-      {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+
+      {image && (
+        <>
+          <Image source={{ uri: image }} style={{ width: 200, height: 200, marginTop: 20 }} />
+          <Button title="Upload a New Image" onPress={reset} />
+        </>
+      )}
+
       {foodInfo && (
-        <View style={{ marginTop: 20 }}>
-          <Text>Food: {foodInfo.name}</Text>
+        <View style={{ marginTop: 20, padding: 10 }}>
+          <Text>Food Identified: {foodInfo.name}</Text>
           <Text>Calories: {foodInfo.calories}</Text>
           <Text>Protein: {foodInfo.protein}</Text>
-          <Text>Carbs: {foodInfo.carbs}</Text>
+          <Text>Carbohydrates: {foodInfo.carbs}</Text>
           <Text>Sugar: {foodInfo.sugar}</Text>
           <Text>Fat: {foodInfo.fat}</Text>
           <Text>Allergens: {foodInfo.allergens.join(', ')}</Text>
+          <Text>Category: {foodInfo.category}</Text>
+          <Text>Brand: {foodInfo.brand}</Text>
+          <Text>Quantity: {foodInfo.quantity}</Text>
+
+          {/* Button to go back to the upload screen */}
+          <Button title="Back to Upload Screen" onPress={reset} />
         </View>
       )}
     </View>
