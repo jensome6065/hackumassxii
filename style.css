@@ -1,0 +1,39 @@
+div {
+  text-align: center;
+}
+input {
+  height: 20px;
+  width:400px;
+  padding:10px;
+  border-radius:5px;
+  border-width: 1px;
+}
+
+button {
+  height: 45px;
+  background-color: #A1E887;
+  border-radius:5px;
+  border-width:1px;
+}
+
+#header {
+  color: #9B1D20;
+  padding:10px;
+  font-size:50px;
+  font-family: 'Madimi One';
+}
+
+button {
+  color: 9B1D20;
+}
+
+#bibiresponse {
+  font-size: 50px;
+  color: #9B1D20;
+  font-family: 'Madimi One';
+  padding:20px;
+}
+
+img {
+  height:200px
+}
